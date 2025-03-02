@@ -58,6 +58,30 @@ export default function ProfilePage() {
   const { user } = useAuth();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [profileData, setProfileData] = useState<Profile | null>(null);
+
+  // useEffect(() => {
+  //   if (!user) return;
+
+  //   async function fetchProfile() {
+  //     try {
+  //       const profile = await getProfile(user!.id);
+  //       setProfileData(profile);
+  //       console.log("Profile variable:", profile);
+  //       console.log("Profile Data state:", profileData);
+  //     } catch (error) {
+  //       console.error("Error fetching profile:", error);
+  //       toast({
+  //         variant: "destructive",
+  //         title: "Failed to fetch profile",
+  //         description:
+  //           "There was an error fetching your profile. Please try again.",
+  //       });
+  //     }
+  //   }
+
+  //   fetchProfile();
+  // }, [user]);
 
   // Form setup
   const form = useForm<z.infer<typeof formSchema>>({

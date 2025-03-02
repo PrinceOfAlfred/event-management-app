@@ -3,8 +3,8 @@
 import type React from "react";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
+import { supabase } from "./supabase";
 
 // Types
 type User = {
@@ -34,11 +34,6 @@ type AuthContextType = {
   requestPasswordReset: (email: string) => Promise<{ error: any } | undefined>;
   resetPassword: (newPassword: string) => Promise<{ error: any } | undefined>;
 };
-
-// Create Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Create context
 const AuthContext = createContext<AuthContextType | undefined>(undefined);

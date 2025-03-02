@@ -131,7 +131,7 @@ export default function EditEventPage({ params }: EditEventPageProps) {
     if (user) {
       loadEvent();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id, user, router, toast, form]);
 
   // Form submission handler
@@ -296,7 +296,7 @@ export default function EditEventPage({ params }: EditEventPageProps) {
                 control={form.control}
                 name="time"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex flex-col">
                     <FormLabel>Time</FormLabel>
                     <FormControl>
                       <Input type="time" {...field} />
