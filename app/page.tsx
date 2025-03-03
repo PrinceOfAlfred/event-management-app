@@ -1,13 +1,13 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { CalendarDays } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { CalendarDays } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 border-b bg-background">
         <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2 font-bold">
+          <div className="flex items-center gap-2 font-bold ml-4">
             <CalendarDays className="h-6 w-6" />
             <span>EventHub</span>
           </div>
@@ -28,8 +28,8 @@ export default function Home() {
               Manage Your Events with Ease
             </h1>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              Create, manage, and attend events all in one place. The perfect platform for event organizers and
-              attendees.
+              Create, manage, and attend events all in one place. The perfect
+              platform for event organizers and attendees.
             </p>
             <div className="flex justify-center gap-4">
               <Link href="/register">
@@ -45,22 +45,28 @@ export default function Home() {
         </section>
         <section className="bg-muted py-16">
           <div className="container space-y-12">
-            <h2 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl">Features</h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <h2 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl">
+              Features
+            </h2>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ml-4">
               <div className="rounded-lg border bg-card p-6 shadow-sm">
                 <h3 className="text-xl font-bold">Create Events</h3>
                 <p className="text-muted-foreground">
-                  Easily create and customize events with all the details your attendees need.
+                  Easily create and customize events with all the details your
+                  attendees need.
                 </p>
               </div>
               <div className="rounded-lg border bg-card p-6 shadow-sm">
                 <h3 className="text-xl font-bold">Manage Registrations</h3>
-                <p className="text-muted-foreground">Keep track of attendees and manage registrations in real-time.</p>
+                <p className="text-muted-foreground">
+                  Keep track of attendees and manage registrations in real-time.
+                </p>
               </div>
               <div className="rounded-lg border bg-card p-6 shadow-sm">
                 <h3 className="text-xl font-bold">Discover Events</h3>
                 <p className="text-muted-foreground">
-                  Find and attend events that interest you from organizers around you.
+                  Find and attend events that interest you from organizers
+                  around you.
                 </p>
               </div>
             </div>
@@ -69,20 +75,25 @@ export default function Home() {
       </main>
       <footer className="border-t py-6">
         <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="text-center text-sm leading-loose text-muted-foreground">
+          <p className="text-center text-sm leading-loose text-muted-foreground ml-4">
             © 2023 EventHub. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link href="/terms" className="text-sm underline underline-offset-4">
+            <Link
+              href="/terms"
+              className="text-sm underline underline-offset-4"
+            >
               Terms
             </Link>
-            <Link href="/privacy" className="text-sm underline underline-offset-4">
+            <Link
+              href="/privacy"
+              className="text-sm underline underline-offset-4"
+            >
               Privacy
             </Link>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-

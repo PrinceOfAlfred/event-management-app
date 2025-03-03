@@ -1,27 +1,32 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Toaster } from "@/components/ui/toaster"
-import { AuthProvider } from "@/lib/auth-provider"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
+import { AuthProvider } from "@/lib/auth-provider";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Event Management App",
   description: "Manage your events with ease",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <AuthProvider>
             {children}
             <Toaster />
@@ -29,6 +34,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
-
